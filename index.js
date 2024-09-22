@@ -112,3 +112,13 @@ function multi(...num) {
   let total = numbers.reduce((total, current) => total * current);
   return total;
 }
+
+function arraysSum(arrays) {
+  let numbers = 0;
+  for (let array of arrays) {
+    numbers += array;
+  }
+  return numbers;
+}
+
+//___________________________________________________********************_________________________________________________________________
