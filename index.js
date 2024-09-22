@@ -109,9 +109,6 @@ function multi(num1, num2) {
 
 function multi(...num) {
   const numbers = [...num];
-  console.log(numbers[0]);
   let total = numbers.reduce((total, current) => total * current);
   return total;
 }
-
-console.log(multi(5, 6));
