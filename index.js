@@ -113,12 +113,36 @@ function multi(...num) {
   return total;
 }
 
+// sum of array
+
+function arraysSum(arrays) {
+  let numbers = arrays;
+  return numbers.reduce((sum, number) => sum + number, 0);
+}
+
+// using for of loop
+
 function arraysSum(arrays) {
   let numbers = 0;
   for (let array of arrays) {
     numbers += array;
   }
+  console.log(numbers);
   return numbers;
+}
+//___________________________________________________********************_________________________________________________________________
+
+// array multiply
+
+function arraysMulti(arrays) {
+  let numbers = arrays;
+  return numbers.reduce((sum, number) => sum * number);
 }
 
 //___________________________________________________********************_________________________________________________________________
+
+// power function to calculate power
+
+function power(num, pow) {
+  return pow !== undefined && pow !== null ? Math.pow(num, pow) : num;
+}
