@@ -146,3 +146,44 @@ function arraysMulti(arrays) {
 function power(num, pow) {
   return pow !== undefined && pow !== null ? Math.pow(num, pow) : num;
 }
+
+// creating element with multiple or single class
+
+function createElementWithClass(element, ...classattribute) {
+  const newElement = document.createElement(element);
+  const classattributes = [...classattribute];
+
+  classattributes.forEach((attribute) => {
+    newElement.classList.add(attribute);
+  });
+  return newElement;
+}
+
+//___________________________________________________********************_________________________________________________________________
+
+// creating element with id
+
+function createElementWithId(element, id) {
+  const newElement = document.createElement(element);
+
+  newElement.id = id;
+  return newElement;
+}
+
+//___________________________________________________********************_________________________________________________________________
+
+// append an element to the DOM
+
+function appendElement(parent, child) {
+  const parentElement = document.querySelector(parent);
+
+  if (parentElement) {
+    parentElement.appendChild(child);
+    // return appendedElement;
+  } else {
+    console.warn(`Parent element ${parent} not found`);
+    return null;
+  }
+}
+
+//___________________________________________________********************_________________________________________________________________
