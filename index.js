@@ -187,3 +187,51 @@ function appendElement(parent, child) {
 }
 
 //___________________________________________________********************_________________________________________________________________
+
+// createButton with id, button name and add event listener with call back function
+
+function createButtonWithEventListener(idname, buttonname, callbackfunc) {
+  const button = createElementWithId("button", idname);
+  button.textContent = buttonname;
+  button.addEventListener("click", callbackfunc);
+  return button;
+}
+
+// clearing all the contents of inputField
+
+function allClear(targetname, target) {
+  if (targetname === "id") {
+    const inputField = document.getElementById(target);
+    inputField.value = "";
+  } else if (targetname === "class") {
+    const inputField = document.getElementsByClassName(target);
+    inputField.value = "";
+  }
+}
+
+// clearing the contents from the display including node and elements
+
+function removeContentsFromDisplay(parentElement) {
+  const parent = document.querySelector(parentElement);
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
+// clearing the contents from the display only elements not node
+
+function removeContentsFromDisplay(parentElement) {
+  const parent = document.querySelector(parentElement);
+  while (parent.firstElementChild) {
+    parent.removeChild(parent.firstElementChild);
+  }
+}
+
+// clearing the input field one by one backwards
+
+function backspace(input) {
+  if (input === "") return input;
+  const inputLength = input.length;
+  const trimmed = input.substr(0, inputLength - 1);
+  return trimmed;
+}
