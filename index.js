@@ -197,6 +197,7 @@ function createButtonWithEventListener(idname, buttonname, callbackfunc) {
   return button;
 }
 
+//___________________________________________________********************_________________________________________________________________
 // clearing all the contents of inputField
 
 function allClear(targetname, target) {
@@ -208,6 +209,8 @@ function allClear(targetname, target) {
     inputField.value = "";
   }
 }
+
+//___________________________________________________********************_________________________________________________________________
 
 // clearing the contents from the display including node and elements
 
@@ -227,6 +230,8 @@ function removeContentsFromDisplay(parentElement) {
   }
 }
 
+//___________________________________________________********************_________________________________________________________________
+
 // clearing the input field one by one backwards
 
 function backspace(input) {
@@ -235,3 +240,32 @@ function backspace(input) {
   const trimmed = input.substr(0, inputLength - 1);
   return trimmed;
 }
+
+//___________________________________________________********************_________________________________________________________________
+
+// function for dropdown menu
+
+function createDropdown(dropDownBtnId, dropDownMenuId, toggleArrowClass) {
+  const dropDownBtn = document.getElementById(dropDownBtnId);
+  const dropDownMenu = document.getElementById(dropDownMenuId);
+  const toggleArrow = document.querySelector(toggleArrowClass);
+
+  function toggleDropdown() {
+    dropDownMenu.classList.toggle("show");
+    toggleArrow.classList.toggle("arrow-down");
+  }
+
+  dropDownBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleDropdown();
+  });
+
+  document.documentElement.addEventListener("click", () => {
+    if (dropDownMenu.classList.contains("show")) {
+      toggleDropdown();
+    }
+  });
+}
+
+// Usage Example
+createDropdown("dropdown-btn", "dropdown-menu", ".fa-caret-up");
