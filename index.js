@@ -188,6 +188,22 @@ function appendElement(parent, child) {
 
 //___________________________________________________********************_________________________________________________________________
 
+// prepend element
+
+function prependElement(parent, child) {
+  const parentElement = document.querySelector(parent);
+
+  if (parentElement) {
+    parentElement.prepend(child);
+    // return prependedElement;
+  } else {
+    console.warn(`Parent element ${parent} not found`);
+    return null;
+  }
+}
+
+//___________________________________________________********************_________________________________________________________________
+
 // createButton with id, button name and add event listener with call back function
 
 function createButtonWithEventListener(idname, buttonname, callbackfunc) {
@@ -269,3 +285,17 @@ function createDropdown(dropDownBtnId, dropDownMenuId, toggleArrowClass) {
 
 // Usage Example
 createDropdown("dropdown-btn", "dropdown-menu", ".fa-caret-up");
+
+//___________________________________________________********************_________________________________________________________________
+
+
+// setting multiple attribute and values with giving element and object
+
+function setMultipleAttribute(element, attributesObj) {
+  for (let key in attributesObj) {
+    element.setAttribute(key, attributesObj[key]);
+  }
+}
+
+//___________________________________________________********************_________________________________________________________________
+
